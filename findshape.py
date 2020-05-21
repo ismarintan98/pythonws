@@ -14,6 +14,7 @@ rect_y_min = np.full(50, 0)
 number_of_rect = 0
 detetected = 0
 
+#myy
 
 img = cv2.imread("test3.png", cv2.IMREAD_GRAYSCALE)
 _, threshold = cv2.threshold(img, 70, 255, cv2.THRESH_BINARY)
