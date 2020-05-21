@@ -14,10 +14,10 @@ rect_y_min = np.full(50, 0)
 number_of_rect = 0
 detetected = 0
 
-#myy
-
-img = cv2.imread("test3.png", cv2.IMREAD_GRAYSCALE)
-_, threshold = cv2.threshold(img, 70, 255, cv2.THRESH_BINARY)
+# img = cv2.imread("test5.png", cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("test5.png")
+img_grey = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+_, threshold = cv2.threshold(img_grey, 70, 255, cv2.THRESH_BINARY)
 contours, _ = cv2.findContours(
     threshold, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
 
