@@ -18,8 +18,7 @@ detetected = 0
 img = cv2.imread("testbw2.png")
 img_grey = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 _, threshold = cv2.threshold(img_grey, 88, 255, cv2.THRESH_BINARY)
-contours, _ = cv2.findContours(
-    threshold, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+contours, _ = cv2.findContours(threshold, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
 
 
 for cnt in contours:
