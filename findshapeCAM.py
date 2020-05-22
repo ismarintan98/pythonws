@@ -26,7 +26,7 @@ while capture.isOpened():
         img_blur = cv2.GaussianBlur(img,(71,71),1)
         img_grey = cv2.cvtColor(img_blur, cv2.COLOR_BGR2GRAY)
         _, threshold = cv2.threshold(img_grey, 90, 255, cv2.THRESH_BINARY)
-        contours, _ = cv2.findContours(threshold, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+        contours, _ = cv2.findContours(threshold, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_NONE)
 
 
         for cnt in contours:
@@ -88,7 +88,7 @@ while capture.isOpened():
 
 
         cv2.imshow("shapes", img)
-        cv2.imshow("Threshold", img_blur)
+        cv2.imshow("Threshold", threshold)
 
         if cv2.waitKey(20) & 0xFF == ord('q'):
             break
