@@ -3,8 +3,6 @@ import numpy as np
 
 font = cv2.FONT_HERSHEY_COMPLEX
 
-cap = cv2.VideoCapture()
-
 rect_x_max = np.full(1000, 0)
 rect_y_max = np.full(1000, 0)
 
