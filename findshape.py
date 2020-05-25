@@ -13,7 +13,7 @@ number_of_rect = 0
 detetected = 0
 
 # img = cv2.imread("test5.png", cv2.IMREAD_GRAYSCALE)
-img = cv2.imread("testbw2.png")
+img = cv2.imread("testbw.png")
 img_grey = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 _, threshold = cv2.threshold(img_grey, 88, 255, cv2.THRESH_BINARY)
 contours, _ = cv2.findContours(threshold, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)

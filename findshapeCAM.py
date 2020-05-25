@@ -14,7 +14,7 @@ rect_y_min = np.full(100000, 0)
 number_of_rect = 0
 detetected = 0
 
-capture = cv2.VideoCapture("2020-05-22-015325.webm")
+capture = cv2.VideoCapture(0)
 
 if capture.isOpened()is False:
     print("Error opening the camera")
