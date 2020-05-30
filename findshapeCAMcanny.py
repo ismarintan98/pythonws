@@ -44,7 +44,7 @@ while capture.isOpened():
         for cnt in contours:
             area = cv2.contourArea(cnt)
             if(area>1000):            
-                approx = cv2.approxPolyDP(cnt, 0.03*cv2.arcLength(cnt, True), True)
+                approx = cv2.approxPolyDP(cnt, 0.01*cv2.arcLength(cnt, True), True)
                 x = approx.ravel()[0]
                 y = approx.ravel()[1]
 
@@ -97,13 +97,13 @@ while capture.isOpened():
         for cnt in contours2:
             area = cv2.contourArea(cnt)
             if(area>1000):            
-                approx = cv2.approxPolyDP(cnt, 0.03*cv2.arcLength(cnt, True), True)
+                approx = cv2.approxPolyDP(cnt, 0.06*cv2.arcLength(cnt, True), True)
                 x = approx.ravel()[0]
                 y = approx.ravel()[1]
 
                 if len(approx) == 3:
                     for cnt_trig in range(0, number_of_rect):
-                        if x-8 > rect_x_min[cnt_trig] and x+8 < rect_x_max[cnt_trig] and y-8 > rect_y_min[cnt_trig] and y+8 < rect_y_max[cnt_trig]:
+                        if x > rect_x_min[cnt_trig] and x < rect_x_max[cnt_trig] and y > rect_y_min[cnt_trig] and y < rect_y_max[cnt_trig]:
                             cv2.putText(img_crop, "Target", (x, y), font, 1, (255,0,255))
                             # cv2.drawContours(img_crop, [approx], 0, (255,0,255), 3)
                             cv2.rectangle(img_crop,(rect_x_min[cnt_trig],rect_y_min[cnt_trig]),(rect_x_max[cnt_trig],rect_y_max[cnt_trig]),(255,0,255),3)
